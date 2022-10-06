@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Color On Scrolling</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    
+     
+
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      #myDIV {
+        margin: 30px;
+        padding: 10px;
+        width: 15%;
+        height: 10vw;
+        overflow-y: scroll;
+        border: 2px solid red;
+
+      }
+      
+      .greencolor{
+        background-color: green;
+        color: red;
+      }
+      .bluecolor{
+        background-color: blue;
+        color: rgb(255, 255, 255);
+      }
+      .purplecolor{
+        background-color: rgb(249, 243, 249);
+        color: rgb(0, 0, 0);
+      }
+      .redcolor{
+        background-color: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+  
+<div id="myDIV">
+    <p id="parag2">
+
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Tenetur omnis odit maxime ducimus quos ullam similique optio 
+      eveniet atque esse cumque ab vitae laborum porro accusamus, 
+      ipsum corporis quasi? Quam, qui deserunt a reprehenderit laudantium
+       beatae placeat amet animi maxime nihil vitae voluptates eveniet error 
+       accusamus dolorem labore molestiae et aliquid velit aliquam ipsum. 
+       Itaque veritatis soluta error harum distinctio maxime ipsum blanditiis, 
+       corporis eveniet nulla est dolorem eaque nesciunt vero quisquam at ipsam 
+       placeat voluptatem qui. Minima nemo accusamus autem nam consequatur,
+        quisquam velit 
+       dolores non quam! Vel,cupiditate ipsum id fugittempora assumenda
+         veniam molestias veritatis repudiandae voluptatum?
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Tenetur omnis odit maxime ducimus quos ullam similique optio 
+      eveniet atque esse cumque ab vitae laborum porro accusamus, 
+      ipsum corporis quasi? Quam, qui deserunt a reprehenderit laudantium
+       beatae placeat amet animi maxime nihil vitae voluptates eveniet error 
+       accusamus dolorem labore molestiae et aliquid velit aliquam ipsum. 
+       Itaque veritatis soluta error harum distinctio maxime ipsum blanditiis, 
+       corporis eveniet nulla est dolorem eaque nesciunt vero quisquam at ipsam 
+       placeat voluptatem qui. Minima nemo accusamus autem nam consequatur, 
+       quisquam velit 
+       dolores non quam! Vel,cupiditate ipsum id fugittempora assumenda
+         veniam molestias veritatis repudiandae voluptatum?
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Tenetur omnis odit maxime ducimus quos ullam similique optio 
+      eveniet atque esse cumque ab vitae laborum porro accusamus, 
+      ipsum corporis quasi? Quam, qui deserunt a reprehenderit laudantium
+       beatae placeat amet animi maxime nihil vitae voluptates eveniet error 
+       accusamus dolorem labore molestiae et aliquid velit aliquam ipsum. 
+       Itaque veritatis soluta error harum distinctio maxime ipsum blanditiis, 
+       corporis eveniet nulla est dolorem eaque nesciunt vero quisquam at ipsam 
+       placeat voluptatem qui. Minima nemo accusamus autem nam consequatur,
+        quisquam velit 
+       dolores non quam! Vel,cupiditate ipsum id fugittempora assumenda
+         veniam molestias veritatis repudiandae voluptatum?
+</p>
+
+    <script>
+   
+      window.addEventListener("scroll", changeColor);
+       let scrollValue = window.scrollY;
+       let changecolor = document.getElementById("myDIV");
+      changecolor.addEventListener("scroll", changeColor);
+       
+
+      function changeColor () {
+         console.log(window.scrollY);
+        if (scrollValue <50) {
+          changecolor.classList.remove("redcolor");
+          changecolor.classList.add("greencolor");
+          
+        } 
+
+        else if (scrollValue >= 50 && scrollValue < 70) {
+          changecolor.classList.remove("greencolor");
+          changecolor.classList.add("bluecolor");
+          
+        }
+        else if (scrollValue >= 70 && scrollValue < 100) {
+          changecolor.classList.remove("bluecolor");
+          changecolor.classList.add("purplecolor");
+         
+        } 
+        else {
+          changecolor.classList.remove("purplecolor");
+          changecolor.classList.add("redcolor");
+          
+        }
+      }
+    </script>
+  </body>
+</html>
