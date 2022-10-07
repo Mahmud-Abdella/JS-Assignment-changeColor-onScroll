@@ -41,18 +41,7 @@
         background-color: green;
         color: red;
       }
-      .bluecolor{
-        background-color: blue;
-        color: rgb(255, 255, 255);
-      }
-      .purplecolor{
-        background-color: rgb(249, 243, 249);
-        color: rgb(0, 0, 0);
-      }
-      .redcolor{
-        background-color: red;
-        color: white;
-      }
+     
     </style>
   </head>
   <body>
@@ -95,41 +84,20 @@
        placeat voluptatem qui. Minima nemo accusamus autem nam consequatur,
         quisquam velit 
        dolores non quam! Vel,cupiditate ipsum id fugittempora assumenda
-         veniam molestias veritatis repudiandae voluptatum?
-</p>
+         veniam molestias veritatis repudiandae voluptatum?</p>
 
     <script>
-   
       window.addEventListener("scroll", changeColor);
        let scrollValue = window.scrollY;
        let changecolor = document.getElementById("myDIV");
       changecolor.addEventListener("scroll", changeColor);
        
-
       function changeColor () {
-         console.log(window.scrollY);
-        if (scrollValue <50) {
-          changecolor.classList.remove("redcolor");
           changecolor.classList.add("greencolor");
           
-        } 
-
-        else if (scrollValue >= 50 && scrollValue < 70) {
-          changecolor.classList.remove("greencolor");
-          changecolor.classList.add("bluecolor");
-          
         }
-        else if (scrollValue >= 70 && scrollValue < 100) {
-          changecolor.classList.remove("bluecolor");
-          changecolor.classList.add("purplecolor");
-         
-        } 
-        else {
-          changecolor.classList.remove("purplecolor");
-          changecolor.classList.add("redcolor");
-          
-        }
-      }
+        changecolor.classList.remove("greencolor");
+       
     </script>
   </body>
 </html>
